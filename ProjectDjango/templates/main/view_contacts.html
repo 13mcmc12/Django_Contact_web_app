@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Contacts</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/view_contacts.css"/>
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div>
+        <h1>List of Contacts</h1>
+        <table id="width" border="2">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone No.</th>
+                    <th>Email</th>
+                    <th>Street</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Pin-code</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for contact in records %}
+                <tr>
+                    <td> {{ contact.name }} </td>
+                    <td> {{contact.phone_no}} </td>
+                    <td> {{contact.email}} </td>
+                    <td> {{contact.street}} </td>
+                    <td> {{contact.city}} </td>
+                    <td> {{contact.state}} </td>
+                    <td> {{contact.pin_code}} </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a class="button small"  href="{% url "contacts_home" %}">Home</a>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

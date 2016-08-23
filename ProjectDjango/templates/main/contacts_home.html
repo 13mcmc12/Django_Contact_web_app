@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/contacts_home.css"/>
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div>
+        {{ message }}
+        <h1>Menu:</h1>
+        <form  action="{% url "add_contact_form" %}" method="POST"> {% csrf_token %}
+           <a href="#"> <input class="button small" type="submit" value="ADD CONTACT"/></a>
+        </form>
+        <form action="{% url "delete_contact_form" %}" method="POST" >{% csrf_token %}
+            <input class="button small" type="submit" value="DELETE CONTACT"/>
+        </form>
+        <form action="{% url "get_contact_form" %}">{% csrf_token %}
+            <input class="button small" type="submit" value="GET CONTACT"/>
+        </form>
+        <form action="{% url "get_provider_form" %}">{% csrf_token %}
+            <input class="button small" type="submit" value="GET PROVIDER"/>
+        </form>
+        <form action="{% url "get_contacts_by_provider_form" %}">{% csrf_token %}
+            <input class="button small" type="submit" value="GET CONTACTS BY PROVIDER"/>
+        </form>
+        <form action="{% url "get_contacts_by_field_form" %}">{% csrf_token %}
+            <input class="button small" type="submit" value="GET CONTACTS BY FIELD"/>
+        </form>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

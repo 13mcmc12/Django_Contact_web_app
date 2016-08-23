@@ -1,0 +1,101 @@
+{
+  "9440123456": {
+    "phone_no": "9440123456", 
+    "address": {
+      "city": "saafrafg", 
+      "state": "saafrafg", 
+      "street": "safgg", 
+      "pin_code": "123456"
+    }, 
+    "name": "sanjay", 
+    "email": "safa"
+  }, 
+  "8332990701": {
+    "phone_no": "8332990701", 
+    "address": {
+      "city": "", 
+      "state": "", 
+      "street": "", 
+      "pin_code": ""
+    }, 
+    "name": "sanjay", 
+    "email": null
+  }, 
+  "9875486520": {
+    "phone_no": "9875486520", 
+    "address": {
+      "city": "", 
+      "state": "", 
+      "street": "", 
+      "pin_code": ""
+    }, 
+    "name": "sanjay", 
+    "email": null
+  }, 
+  "9147852369": {
+    "phone_no": "9147852369", 
+    "address": {
+      "city": "", 
+      "state": "", 
+      "street": "", 
+      "pin_code": ""
+    }, 
+    "name": "sanjay", 
+    "email": "sda"
+  }, 
+  "8332990711": {
+    "phone_no": "8332990711", 
+    "address": {
+      "city": "cba", 
+      "state": "cba", 
+      "street": "abc", 
+      "pin_code": "123456"
+    }, 
+    "name": "sanjay sharma", 
+    "email": "sanjayhcu01@gmail.com"
+  }, 
+  "7894561250": {
+    "phone_no": "7894561250", 
+    "address": {
+      "city": "city", 
+      "state": "city", 
+      "street": "abc", 
+      "pin_code": "123456"
+    }, 
+    "name": "Ravi Kiran", 
+    "email": "ravi@gmail.com"
+  }, 
+  "9440942788": {
+    "phone_no": "9440942788", 
+    "address": {
+      "city": "", 
+      "state": "", 
+      "street": "", 
+      "pin_code": ""
+    }, 
+    "name": "sanjay sharma", 
+    "email": null
+  }, 
+  "9760504838": {
+    "phone_no": "9760504838", 
+    "address": {
+      "city": "cba", 
+      "state": "cba", 
+      "street": "saq", 
+      "pin_code": "123456"
+    }, 
+    "name": "Neeraj sharma", 
+    "email": "sanjayhcu01@gmail.com"
+  }, 
+  "8142173934": {
+    "phone_no": "8142173934", 
+    "address": {
+      "city": "", 
+      "state": "", 
+      "street": "", 
+      "pin_code": ""
+    }, 
+    "name": "mancha sri harray", 
+    "email": null
+  }
+}

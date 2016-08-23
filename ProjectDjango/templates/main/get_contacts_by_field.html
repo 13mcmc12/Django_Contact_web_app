@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Contacts by Field</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/get_contacts_by_field.css"/>
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div id="main_div">
+        <h1>Get contacts by Field</h1>
+        <form action="{% url "get_contacts_by_field" %}" method="post">{%csrf_token %}
+            <div class="row">
+                <div class="row collapse prefix-radius">
+                    <div class="small-3 columns">
+                        <label for="ip1" class="right inline">Enter string:</label>
+                    </div>
+                    <div class="small-6 columns">
+                        <input id="ip1" type="text" name="string"/>
+                    </div>
+                    <div class="small-3 columns"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns"></div>
+                <div class="small-6 columns">
+                    <select id="select" name="field">
+                        <option value="" disabled="disabled" selected="selected">Select Field</option>
+                        <option value="name">NAME</option>
+                        <option value="phone_no">PHONE_NO</option>
+                        <option value="email">EMAIL</option>
+                        <option value="street">STREET</option>
+                        <option value="city">CITY</option>
+                        <option value="state">STATE</option>
+                        <option value="pin_code">PIN_CODE</option>
+                    </select>
+                </div>
+                <div class="small-3 columns"></div>
+            </div>
+            <input class="button small" type="submit" value="Submit"/>
+        </form>
+        <a class="button small"  href="{% url "contacts_home" %}">Home</a>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

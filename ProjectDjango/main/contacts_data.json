@@ -1,0 +1,68 @@
+{
+  "9440123456": {
+    "phone_no": "9440123456", 
+    "address": {
+      "city": "saafrafg", 
+      "state": "saafrafg", 
+      "street": "safgg", 
+      "pin_code": "123456"
+    }, 
+    "name": "sanjay", 
+    "email": "safa"
+  }, 
+  "8332990701": {
+    "phone_no": "8332990701", 
+    "address": {
+      "city": "cba", 
+      "state": "cba", 
+      "street": "abc", 
+      "pin_code": "123456"
+    }, 
+    "name": "sanjay", 
+    "email": "sanjayhcu01@gmail.com"
+  }, 
+  "8332990711": {
+    "phone_no": "8332990711", 
+    "address": {
+      "city": "cba", 
+      "state": "cba", 
+      "street": "abc", 
+      "pin_code": "123456"
+    }, 
+    "name": "sanjay sharma", 
+    "email": "sanjayhcu01@gmail.com"
+  }, 
+  "8521479630": {
+    "phone_no": "8521479630", 
+    "address": {
+      "city": "sad", 
+      "state": "sad", 
+      "street": "acd", 
+      "pin_code": "123456"
+    }, 
+    "name": "Manch Sri Hari", 
+    "email": "mancha@gmail.com"
+  }, 
+  "7894561250": {
+    "phone_no": "7894561250", 
+    "address": {
+      "city": "city", 
+      "state": "city", 
+      "street": "abc", 
+      "pin_code": "123456"
+    }, 
+    "name": "Ravi Kiran", 
+    "email": "ravi@gmail.com"
+  }, 
+  "9760504838": {
+    "phone_no": "9760504838", 
+    "address": {
+      "city": "cba", 
+      "state": "cba", 
+      "street": "saq", 
+      "pin_code": "123456"
+    }, 
+    "name": "Neeraj sharma", 
+    "email": "sanjayhcu01@gmail.com"
+  }
+}

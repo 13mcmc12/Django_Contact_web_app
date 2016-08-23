@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Details</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/view_contact.css"/>
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div>
+        <h1>Contact Details</h1>
+        <form action="{% url "modify_contact_form" %}" method="POST">{% csrf_token %}
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip1" class="right inline">Name:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip1" type="text" name="name" value="{{contact.name}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip2" class="right inline">Phone No:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip2" type="text" name="phone_no" value="{{contact.phone_no}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip3" class="right inline">Email:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip3" type="text" name="email" value="{{contact.email}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip4" class="right inline">Street:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip4" type="text" name="street" value="{{contact.street}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip5" class="right inline">City:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip5" type="text" name="city" value="{{contact.city}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip6" class="right inline">State:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip6" type="text" name="state" value="{{contact.state}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip7" class="right inline">Pin-code:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip7" type="number" name="pin_code" value="{{contact.pin_code}}" readonly/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <p><input id="ip8" class="button small" type="submit" value="Modify Contact"/></p>
+        </form>
+        <a class="button small"  href="{% url "contacts_home" %}">Home</a>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

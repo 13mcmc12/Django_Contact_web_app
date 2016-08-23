@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Add Contact</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/add_contact.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script>
+            $(document).ready(function(){
+    $("#btn1").click(function()  {
+        var name = $("#ip1").val();
+        var phone = $("#ip2").val();
+        var email = $("#ip3").val();
+        var street = $("#ip4").val();
+        var city = $("#ip5").val();
+        var state = $("#ip6").val();
+        var pin = $("#ip7").val();
+        if (name == "" || phone == ""){
+            $("#message").text('Name and Phone number are required!');
+        }
+        else if (/\b[7-9]([0-9]){9}\b/.test(phone) == false){
+            $("#message").text('Invalid phone number!');
+        }
+        else if (email != "" && /\b[a-zA-Z0-9]+[@][a-zA-Z0-9]+[.][a-zA-Z]+\b/.test(email) == false){
+            $("#message").text('Invalid email format!');
+        }
+        else if (pin != "" && /\b[0-9]{6}\b/.test(pin) == false){
+            $("#message").text('Invalid pin-code!');
+        }
+        else{
+            $.post("add_contact11",
+             { name : name, phone_no : phone, email : email, street : street, city : city,
+             state : state, pin_code : pin},
+             function(data){
+                 $("#message").text(data);
+             }
+            );
+        }
+    });
+});
+
+
+            $.ajaxSetup({
+     beforeSend: function(xhr, settings) {
+         function getCookie(name) {
+             var cookieValue = null;
+             if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = jQuery.trim(cookies[i]);
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+         }
+         if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+             // Only send the token to relative URLs i.e. locally.
+             xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+         }
+     }
+});
+
+        </script>
+
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div>
+        <h1>Add Contact</h1>
+        <form >
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip1" class="right inline">Name:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip1" type="text" name="name" required/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip2" class="right inline">Phone No:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip2" type="text" name="phone_no" required/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip3" class="right inline">Email:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip3" type="text" name="email"/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip4" class="right inline">Street:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip4" type="text" name="street"/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip5" class="right inline">City:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip5" type="text" name="city"/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip6" class="right inline">State:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip6" type="text" name="state"/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="ip7" class="right inline">Pin-code:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="ip7" type="number" name="pin_code"/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+         <input id="btn1" class="button small" type="button" value="Submit"/>
+
+              <input id="btn2" class="button small" type="reset" value="Reset"/>
+
+             <p id=message></p>
+
+
+        </form>
+
+        <a class="button small" href="{% url "contacts_home" %}">Home</a>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

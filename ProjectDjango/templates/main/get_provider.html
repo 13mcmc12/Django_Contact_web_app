@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Provider</title>
+    <link rel="stylesheet" href="/static/normalize.css"/>
+    <link rel="stylesheet" href="/static/foundation.css"/>
+    <link rel="stylesheet" href="/static/get_provider.css"/>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+    <script>
+            $(document).ready(function(){
+    $("#btn1").click(function(){
+
+        var phone = $("#phone").val();
+
+
+        if (/\b[7-9]([0-9]){9}\b/.test(phone) == false){
+            $("#message").text('Invalid phone number!45565');
+        }
+
+        else{
+            $.post("get_provider11",
+             {  phone_no : phone},
+             function(data){
+                 $("#message").text(data);
+             }
+            );
+        }
+    });
+});
+
+
+       $.ajaxSetup({
+     beforeSend: function(xhr, settings) {
+         function getCookie(name) {
+             var cookieValue = null;
+             if (document.cookie && document.cookie != '') {
+                 var cookies = document.cookie.split(';');
+                 for (var i = 0; i < cookies.length; i++) {
+                     var cookie = jQuery.trim(cookies[i]);
+                     // Does this cookie string begin with the name we want?
+                     if (cookie.substring(0, name.length + 1) == (name + '=')) {
+                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                         break;
+                     }
+                 }
+             }
+             return cookieValue;
+         }
+         if (!(/^http:.*/.test(settings.url) || /^https:.*/.test(settings.url))) {
+             // Only send the token to relative URLs i.e. locally.
+             xhr.setRequestHeader("X-CSRFToken", getCookie('csrftoken'));
+         }
+     }
+});
+        </script>
+
+</head>
+<body>
+    <header>
+        <h1>Telephone Directory</h1>
+    </header>
+    <div id="main_div">
+        <h1>Get Provider</h1>
+        <form >
+            <div class="row">
+                <div class="small-3 columns">
+                    <label for="phone" class="right inline">Phone No:</label>
+                </div>
+                <div class="small-7 columns">
+                    <input id="phone" type="text" name="phone_no" required/>
+                </div>
+                <div class="small-2 columns"></div>
+            </div>
+            <p><input class="button small" id="btn1" type="button" value="Submit"/></p>
+            <p id="message">{{ message }}</p>
+        </form>
+        <a class="button small" href="{% url "contacts_home" %}">Home</a>
+    </div>
+    <footer><h4>Copyrights@TeamYellow</h4></footer>
+</body>
+</html>

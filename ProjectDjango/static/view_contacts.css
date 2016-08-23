@@ -1,0 +1,23 @@
+body{
+    text-align: center;
+}
+header{
+    background: #ADDA90 url("http://www.clker.com/cliparts/N/d/2/R/F/r/phone-book-hi.png") no-repeat center;
+    background-size: 150px 100px;
+    margin: -5px 0px -20px 0px;
+    padding: 0px 0px 135px 0px;
+}
+div{
+    padding: 20px 0px 407px 0px;
+}
+table#width{
+    width: 70%;
+    margin: 40px 0px 30px 270px;
+}
+td{
+    text-align:left;
+}
+footer{
+    background: #ADDA90;
+    padding: 50px 0px 50px 0px;
+}
